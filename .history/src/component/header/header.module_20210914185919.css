@@ -1,0 +1,29 @@
+@value accent-color, black from "/src/common/colors.css";
+
+li {
+  list-style: none;
+  border: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+}
+
+.title {
+  color: accent-color;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.button_container {
+  display: flex;
+  padding: 0;
+}
+
+.button {
+  padding: 0.2rem;
+}

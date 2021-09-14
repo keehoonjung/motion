@@ -1,0 +1,21 @@
+import React from "react";
+import styles from "./note_item.module.css";
+
+const NoteItem = (props: any) => {
+  return (
+    <li className={styles.container}>
+      <section className={styles.document}>
+        <h2 className={styles.title}>Title</h2>
+        <input
+          className={styles.checkbox}
+          type="checkbox"
+          id="ReadBook"
+          name="ReadBook"
+        />
+        <label for="ReadBook">Read Book</label>
+      </section>
+    </li>
+  );
+};
+
+export default NoteItem;

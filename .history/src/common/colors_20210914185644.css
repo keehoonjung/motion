@@ -1,0 +1,13 @@
+@value bg-main-color: #00000080;
+@value bg-accent-color: #2d2d2d;
+@value accent-color: #f64435;
+@value text-accent-color: #ffe498;
+@value text-edit-bg-color: #575757;
+@value border-color: #3f3f3f;
+@value shadow-color: #202020;
+@value document-bg-color: #68686850;
+@value component-bg-gradient: radial-gradient(circle,#646464e6 0%,#363636e6 100%
+    );
+@value smokywhite: #dddbd8;
+@value black: #000000;
+@value translucent-black: #00000099;

@@ -1,0 +1,28 @@
+@value text-accent-color, component-bg-gradient,border-color,shadow-color,smokywhite from "/src/common/colors.css";
+
+.container {
+  width: 90%;
+  display: flex;
+  background: component-bg-gradient;
+  margin-top: 1rem;
+  border: 1px solid border-color;
+  box-shadow: 3px 3px 8px 2px shadow-color;
+}
+
+.description {
+  padding-left: 1rem;
+  color: smokywhite;
+}
+
+.title {
+  color: text-accent-color;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.memo {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+}

@@ -1,0 +1,13 @@
+@value component-bg-gradient,border-color from "/src/common/colors.css";
+
+.container {
+  width: 90%;
+  display: flex;
+  background: component-bg-gradient;
+  margin-top: 1rem;
+  border: 1px solid border-color;
+}
+
+.description {
+  padding-left: 1rem;
+}

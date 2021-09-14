@@ -1,0 +1,13 @@
+@value accent-color, smokywhite from "/src/common/colors.css";
+
+.button {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.7rem;
+  background-color: accent-color;
+  color: smokywhite;
+  font-weight: bold;
+}
+
+.button :hover {
+  transform: scale(1.1);
+}

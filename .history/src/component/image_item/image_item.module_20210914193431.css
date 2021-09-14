@@ -1,0 +1,10 @@
+@value document-bg-color, bg-main-color from "/src/common/colors.css";
+
+.container {
+  display: flex;
+  background: component-bg-gradient;
+}
+
+.description {
+  padding-left: 1rem;
+}

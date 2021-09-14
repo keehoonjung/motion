@@ -1,0 +1,23 @@
+@value document-bg-color, bg-main-color from "/src/common/colors.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 70%;
+  margin: auto;
+}
+
+.item_container {
+  flex: 100%;
+  width: 100%;
+  background-color: document-bg-color;
+}
+
+.footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: bg-main-color;
+}

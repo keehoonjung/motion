@@ -1,0 +1,17 @@
+@value accent-color, bg-main-color from "/src/common/colors.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 70%;
+  margin: auto;
+  background-color: gray;
+}
+
+.item_container {
+  flex: 100%;
+  width: 100%;
+  background-color: black;
+}

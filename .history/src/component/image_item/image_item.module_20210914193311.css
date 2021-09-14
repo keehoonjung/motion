@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+}
+
+.description {
+  padding-left: 1rem;
+}

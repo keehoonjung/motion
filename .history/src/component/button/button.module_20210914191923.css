@@ -1,0 +1,10 @@
+@value accent-color, smokywhite from "/src/common/colors.css";
+
+.button {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.5rem;
+  background-color: accent-color;
+  border: none;
+  color: smokywhite;
+  font-weight: 400;
+}

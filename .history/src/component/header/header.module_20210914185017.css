@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: red;
+}
+
+.button_container {
+  display: flex;
+}

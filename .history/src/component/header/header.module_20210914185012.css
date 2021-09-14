@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+}
+
+.title {
+  color: red;
+}
+
+.button_container {
+  display: flex;
+}

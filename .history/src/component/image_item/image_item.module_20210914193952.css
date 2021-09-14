@@ -1,0 +1,12 @@
+@value component-bg-gradient from "/src/common/colors.css";
+
+.container {
+  width: 90%;
+  display: flex;
+  background: component-bg-gradient;
+  margin-top: 1rem;
+}
+
+.description {
+  padding-left: 1rem;
+}
