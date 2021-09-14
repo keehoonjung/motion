@@ -1,0 +1,6 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 10rem;
+  z-index: 1;
+}

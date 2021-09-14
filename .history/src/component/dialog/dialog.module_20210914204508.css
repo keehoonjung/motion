@@ -1,0 +1,6 @@
+.cotainer {
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+  z-index: 1;
+}

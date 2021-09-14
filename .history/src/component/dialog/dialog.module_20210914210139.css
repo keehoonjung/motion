@@ -1,0 +1,11 @@
+@value text-accent-color, document-bg-color from "/src/common/colors.css";
+
+.container {
+  width: 50%;
+  background-color: document-bg-color;
+  border-radius: 0.5rem;
+}
+
+.title {
+  color: text-accent-color;
+}

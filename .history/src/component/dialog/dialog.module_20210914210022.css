@@ -1,0 +1,7 @@
+@value text-edit-bg-color, translucent-black from "/src/common/colors.css";
+
+.container {
+  width: 50%;
+  text-align: center;
+  background-color: translucent-black;
+}

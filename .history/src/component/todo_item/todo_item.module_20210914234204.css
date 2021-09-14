@@ -1,0 +1,40 @@
+@value accent, text-accent-color, component-bg-gradient,border-color,shadow-color,smokywhite from "/src/common/colors.css";
+
+.container {
+  width: 90%;
+  background: component-bg-gradient;
+  margin-top: 1rem;
+  border: 1px solid border-color;
+  box-shadow: 3px 3px 8px 2px shadow-color;
+  border-radius: 0.5rem;
+}
+
+.document {
+  padding-left: 1rem;
+  padding-bottom: 1em;
+  color: smokywhite;
+}
+
+.title {
+  color: text-accent-color;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.checkbox {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1rem;
+  padding-left: 0.3rem;
+  color: smokywhite;
+  margin-right: 0.5rem;
+}
+
+.deletebutton {
+  position: relative;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  color: accent-color;
+  font-size: 1rem;
+}

@@ -1,0 +1,44 @@
+@value accent-color,component-bg-gradient, text-accent-color, document-bg-color, text-edit-bg-color,smokywhite from "/src/common/colors.css";
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 15%;
+  background: #57575770 component-bg-gradient;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.title {
+  margin: 0;
+  color: text-accent-color;
+  font-size: 1rem;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  color: smokywhite;
+  font-weight: bold;
+  background-color: text-edit-bg-color;
+  outline: none;
+}
+
+.exitbutton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  color: accent-color;
+  font-size: 1rem;
+}
+
+.addbutton {
+  width: 2rem;
+  padding: 1rem;
+}

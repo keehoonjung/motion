@@ -1,0 +1,15 @@
+@value text-edit-bg-color from "/src/common/colors.css";
+
+.background {
+  z-index: 1;
+  width: 100vw;
+}
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 60%;
+  text-align: center;
+  background-color: text-edit-bg-color;
+}
