@@ -15,7 +15,7 @@ type Provdier = GoogleAuthProvider | GithubAuthProvider;
 
 export interface AuthInterface {
   login(providerName: string): Promise<UserCredential>;
-  onAuthChange(onUserChanged: (user: User | null) => void): void;
+  onAuthChange(onUserChanged: () => void): void;
 }
 
 export class AuthService implements AuthInterface {

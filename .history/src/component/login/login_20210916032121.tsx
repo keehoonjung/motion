@@ -23,7 +23,7 @@ const Login = ({ authService }: LoginProps) => {
   };
 
   useEffect(() => {
-    authService.onAuthChange((user: User | null) => {
+    authService.onAuthChange((user) => {
       user && goToMain(user.uid);
     });
   });

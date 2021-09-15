@@ -8,14 +8,12 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
   UserCredential,
-  NextOrObserver,
 } from "firebase/auth";
 
 type Provdier = GoogleAuthProvider | GithubAuthProvider;
 
 export interface AuthInterface {
   login(providerName: string): Promise<UserCredential>;
-  onAuthChange(onUserChanged: (user: User | null) => void): void;
 }
 
 export class AuthService implements AuthInterface {
@@ -37,8 +35,8 @@ export class AuthService implements AuthInterface {
     this.firebaseAuth.signOut();
   }
 
-  onAuthChange(onUserChanged: (user: User | null) => void) {
-    this.firebaseAuth.onAuthStateChanged((user: User | null) => {
+  onAuthChange(onUserChanged: () => void) {
+    this.firebaseAuth.onAuthStateChanged((user: User) => {
       onUserChanged(user);
     });
   }
