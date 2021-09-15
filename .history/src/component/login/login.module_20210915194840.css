@@ -1,0 +1,6 @@
+@value accent-color, bg-main-color from "/src/common/colors.css";
+
+.container {
+  background-color: bg-main-color;
+  width: 50%;
+}

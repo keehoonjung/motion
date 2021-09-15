@@ -6,6 +6,10 @@ import {
 } from "firebase/auth";
 
 export default class AuthService {
+  constructor() {
+    this.firebaseAuth = getAuth();
+    this.googleProvider = new GoogleAuthProvider();
+  }
   login() {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
