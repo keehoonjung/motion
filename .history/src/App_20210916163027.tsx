@@ -4,14 +4,14 @@ import Main from "./component/main/main";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./component/login/login";
 import { AuthInterface } from "./service/auth_service";
-import { DataInterface } from "./service/database";
+import { DataSerivce } from "./service/database";
 
 type AppProps = {
   authService: AuthInterface;
-  dataService: DataInterface;
+  dataService: DataSerivce;
 };
 
-function App({ authService, dataService }: AppProps) {
+function App({ authService }: AppProps) {
   return (
     <BrowserRouter>
       <Switch>
@@ -22,7 +22,7 @@ function App({ authService, dataService }: AppProps) {
         </Route>
         <Route path="/main">
           <section className={stylse.maker_container}>
-            <Main authService={authService} dataService={dataService} />
+            <Main authService={authService} />
           </section>
         </Route>
       </Switch>

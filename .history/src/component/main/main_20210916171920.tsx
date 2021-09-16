@@ -53,7 +53,6 @@ const Main = ({ dataService, authService }: MainProps) => {
       delete updated[item.id];
       return updated;
     });
-    dataService.deleteData(userId, item.id);
   };
 
   useEffect(() => {
@@ -63,7 +62,7 @@ const Main = ({ dataService, authService }: MainProps) => {
     dataService.readData(userId, (items: ItemState) => {
       setItem(items);
     });
-  }, [userId, dataService]);
+  }, []);
 
   return (
     <>

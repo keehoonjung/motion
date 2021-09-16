@@ -12,7 +12,7 @@ const dataService = new DataSerivce(firebaseApp);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App authService={authService} dataService={dataService} />
+    <App authService={authService} />
   </React.StrictMode>,
   document.getElementById("root")
 );

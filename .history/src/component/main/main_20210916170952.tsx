@@ -7,7 +7,7 @@ import Header from "../header/header";
 import Item, { ItemType } from "../item/item";
 import stylse from "./main.module.css";
 
-export type ItemState = {
+type ItemState = {
   [key: string | number]: ItemType;
 };
 
@@ -24,7 +24,36 @@ const Main = ({ dataService, authService }: MainProps) => {
   const history = useHistory<HistoryStateId>();
   const historyState = history?.location?.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
-  const [items, setItem] = useState<ItemState>({});
+  const [items, setItem] = useState<ItemState>({
+    "1": {
+      id: "1",
+      type: "image",
+      title: "Image",
+      text: "Hello",
+      url: "https://picsum.photos/300/200",
+    },
+    "2": {
+      id: "2",
+      type: "video",
+      title: "Video",
+      text: "Hello",
+      url: "https://www.youtube.com/embed/c9RzZpV460k",
+    },
+    "3": {
+      id: "3",
+      type: "note",
+      title: "Note",
+      text: "Hello",
+      url: "",
+    },
+    "4": {
+      id: "4",
+      type: "todo",
+      title: "Todo",
+      text: "Hello",
+      url: "",
+    },
+  });
   const [onDialog, setOnDialog] = useState(false);
   const [type, setType] = useState("");
   const setOnCilck = (type: string) => {
@@ -53,17 +82,15 @@ const Main = ({ dataService, authService }: MainProps) => {
       delete updated[item.id];
       return updated;
     });
-    dataService.deleteData(userId, item.id);
+  };
+
+  const onUpdataItem = (data: ItemState) => {
+    setItem(data);
   };
 
   useEffect(() => {
-    if (!userId) {
-      return;
-    }
-    dataService.readData(userId, (items: ItemState) => {
-      setItem(items);
-    });
-  }, [userId, dataService]);
+    dataService.readData(userId);
+  });
 
   return (
     <>

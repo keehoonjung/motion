@@ -11,7 +11,7 @@ type AppProps = {
   dataService: DataInterface;
 };
 
-function App({ authService, dataService }: AppProps) {
+function App({ authService }: AppProps) {
   return (
     <BrowserRouter>
       <Switch>
@@ -22,7 +22,7 @@ function App({ authService, dataService }: AppProps) {
         </Route>
         <Route path="/main">
           <section className={stylse.maker_container}>
-            <Main authService={authService} dataService={dataService} />
+            <Main authService={authService} />
           </section>
         </Route>
       </Switch>
