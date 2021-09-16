@@ -54,11 +54,9 @@ const Main = ({ dataService, authService }: MainProps) => {
     authService.onAuthChange((user: User | null) => {
       if (user) {
         setUserId(user.uid);
-      } else {
-        history.push("/");
       }
     });
-  }, [authService, userId, history]);
+  });
 
   const onSubmitItem = (item: ItemType) => {
     setItem((items) => {

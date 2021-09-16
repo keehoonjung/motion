@@ -22,17 +22,8 @@ li {
 }
 
 .logout {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   color: accent-color;
   background-color: transparent;
-  font-weight: bold;
-  transition: transform 180ms ease-in;
-}
-
-.logout:hover {
-  transform: scale(1.1);
 }
 
 .button_container {

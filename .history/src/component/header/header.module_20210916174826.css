@@ -7,7 +7,6 @@ li {
 
 .header {
   display: flex;
-  position: relative;
   flex-direction: column;
   align-items: center;
   background-color: bg-main-color;
@@ -16,23 +15,9 @@ li {
 
 .title {
   color: accent-color;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0;
   margin-top: 2rem;
-}
-
-.logout {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: accent-color;
-  background-color: transparent;
-  font-weight: bold;
-  transition: transform 180ms ease-in;
-}
-
-.logout:hover {
-  transform: scale(1.1);
 }
 
 .button_container {

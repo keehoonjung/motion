@@ -53,12 +53,10 @@ const Main = ({ dataService, authService }: MainProps) => {
   useEffect(() => {
     authService.onAuthChange((user: User | null) => {
       if (user) {
-        setUserId(user.uid);
-      } else {
-        history.push("/");
+        return;
       }
     });
-  }, [authService, userId, history]);
+  });
 
   const onSubmitItem = (item: ItemType) => {
     setItem((items) => {

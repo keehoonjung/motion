@@ -12,7 +12,7 @@ const Header = ({ setOnCilck, onLogout }: HeaderProps) => {
     <header className={styles.header}>
       <h1 className={styles.title}>MOTION</h1>
       <button className={styles.logout} onClick={onLogout}>
-        logout
+        Logout
       </button>
       <ul className={styles.button_container}>
         <li className={styles.button}>

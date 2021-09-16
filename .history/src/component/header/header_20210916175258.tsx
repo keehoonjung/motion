@@ -4,10 +4,9 @@ import styles from "./header.module.css";
 
 type HeaderProps = {
   setOnCilck: (type: string) => void;
-  onLogout: () => void;
 };
 
-const Header = ({ setOnCilck, onLogout }: HeaderProps) => {
+const Header = ({ setOnCilck }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>MOTION</h1>

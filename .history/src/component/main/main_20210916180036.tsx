@@ -58,7 +58,7 @@ const Main = ({ dataService, authService }: MainProps) => {
         history.push("/");
       }
     });
-  }, [authService, userId, history]);
+  });
 
   const onSubmitItem = (item: ItemType) => {
     setItem((items) => {

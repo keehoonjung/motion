@@ -8,6 +8,7 @@ type HeaderProps = {
 };
 
 const Header = ({ setOnCilck, onLogout }: HeaderProps) => {
+  const onLogout = () => {};
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>MOTION</h1>

@@ -1,4 +1,3 @@
-import { User } from "@firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { AuthInterface } from "../../service/auth_service";
@@ -41,25 +40,6 @@ const Main = ({ dataService, authService }: MainProps) => {
     authService.logout();
   };
 
-  useEffect(() => {
-    if (!userId) {
-      return;
-    }
-    dataService.readData(userId, (items: ItemState) => {
-      setItem(items);
-    });
-  }, [userId, dataService]);
-
-  useEffect(() => {
-    authService.onAuthChange((user: User | null) => {
-      if (user) {
-        setUserId(user.uid);
-      } else {
-        history.push("/");
-      }
-    });
-  }, [authService, userId, history]);
-
   const onSubmitItem = (item: ItemType) => {
     setItem((items) => {
       const updated = { ...items };
@@ -79,6 +59,15 @@ const Main = ({ dataService, authService }: MainProps) => {
     });
     dataService.deleteData(userId, item.id);
   };
+
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    dataService.readData(userId, (items: ItemState) => {
+      setItem(items);
+    });
+  }, [userId, dataService]);
 
   return (
     <>
