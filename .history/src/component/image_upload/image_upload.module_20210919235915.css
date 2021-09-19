@@ -1,0 +1,43 @@
+@value accent-color, smokywhite from "/src/common/colors.css";
+
+.input {
+  display: none;
+}
+
+.container {
+  position: absolute;
+  bottom: 1rem;
+  right: 6rem;
+  width: 4rem;
+  height: 1.8rem;
+  padding: 0.5rem;
+  background-color: accent-color;
+}
+
+.uploadbutton {
+  background-color: transparent;
+  color: smokywhite;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.loading {
+  position: absolute;
+  bottom: 1rem;
+  right: 6rem;
+  width: 4rem;
+  height: 1.8rem;
+  background-color: accent-color;
+  color: smokywhite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
