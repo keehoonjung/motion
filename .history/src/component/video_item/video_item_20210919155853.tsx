@@ -60,6 +60,7 @@ const VideoItem = ({ card, index, onDeleteItem, moveItem }: itemProps) => {
         ref={ref}
         style={{ opacity: isDragging ? 0.5 : 1 }}
         className={styles.container}
+        allowFullScreen={true}
       >
         <iframe
           width="300"

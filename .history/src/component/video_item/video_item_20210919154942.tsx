@@ -64,7 +64,7 @@ const VideoItem = ({ card, index, onDeleteItem, moveItem }: itemProps) => {
         <iframe
           width="300"
           height="200"
-          src={url}
+          src={card.url}
           title="YouTube video player"
         ></iframe>
         <div className={styles.description}>

@@ -92,7 +92,7 @@ const Main = ({ dataService, authService }: MainProps) => {
         return updated;
       });
     },
-    [items, dataService, userId]
+    [items, dataService]
   );
 
   return (

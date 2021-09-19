@@ -66,6 +66,7 @@ const VideoItem = ({ card, index, onDeleteItem, moveItem }: itemProps) => {
           height="200"
           src={url}
           title="YouTube video player"
+          allowfullscreen
         ></iframe>
         <div className={styles.description}>
           <h2 className={styles.title}>{card.title}</h2>
