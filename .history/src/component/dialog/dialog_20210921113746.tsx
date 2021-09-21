@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import { ItemType } from "../item/item";
 import styles from "./dialog.module.css";
 
@@ -23,9 +23,9 @@ const Dialog = memo(
       setExitCiick();
     };
 
-    const uploadImage = useCallback((uploadUrl: string) => {
+    const uploadImage = (uploadUrl: string) => {
       setUrl(uploadUrl);
-    }, []);
+    };
 
     const onSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
       event.preventDefault();

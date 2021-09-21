@@ -56,12 +56,12 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
   drag(drop(ref));
 
   return (
-    <li
-      ref={ref}
-      style={{ opacity: isDragging ? 0.5 : 1 }}
-      className={styles.list}
-    >
-      <div className={styles.container}>
+    <li className={styles.list}>
+      <div
+        ref={ref}
+        style={{ opacity: isDragging ? 0.5 : 1 }}
+        className={styles.container}
+      >
         <section className={styles.document}>
           <h2 className={styles.title}>{card.title}</h2>
           <input

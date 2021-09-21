@@ -1,10 +1,10 @@
 import React, { memo, useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { DragItemType, itemProps, ItemTypes } from "../item/item";
-import styles from "./todo_item.module.css";
+import styles from "./image_item.module.css";
 
-const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
-  const ref: React.LegacyRef<HTMLLIElement> = useRef(null);
+const ImageItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
+  const ref: React.LegacyRef<HTMLDivElement> = useRef(null);
 
   const onClick = () => {
     onDeleteItem(card);
@@ -30,7 +30,7 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       const clientOffset = monitor.getClientOffset();
       const hoverClientY = clientOffset!.y - hoverBoundingRect!.top;
 
-      console.log("hover todo");
+      console.log("hover image");
 
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
         return;
@@ -62,16 +62,11 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       className={styles.list}
     >
       <div className={styles.container}>
-        <section className={styles.document}>
+        <img className={styles.img} src={card.url} alt="" />
+        <div className={styles.description}>
           <h2 className={styles.title}>{card.title}</h2>
-          <input
-            className={styles.checkbox}
-            type="checkbox"
-            id="ReadBook"
-            name="ReadBook"
-          />
-          <label htmlFor="ReadBook">{card.text}</label>
-        </section>
+          <p className={styles.memo}> {card.text}</p>
+        </div>
         <button className={styles.deletebutton} onClick={onClick}>
           <i className="fas fa-times"></i>
         </button>
@@ -80,4 +75,4 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
   );
 });
 
-export default TodoItem;
+export default ImageItem;

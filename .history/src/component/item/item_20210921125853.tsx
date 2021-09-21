@@ -64,7 +64,6 @@ const Item = memo(
                     index={items.indexOf(item)}
                     onDeleteItem={onDeleteItem}
                     moveItem={moveItem}
-                    updateOrder={updateOrder}
                   />
                 );
               case "note":
@@ -75,7 +74,6 @@ const Item = memo(
                     index={items.indexOf(item)}
                     onDeleteItem={onDeleteItem}
                     moveItem={moveItem}
-                    updateOrder={updateOrder}
                   />
                 );
               case "todo":
@@ -86,7 +84,6 @@ const Item = memo(
                     index={items.indexOf(item)}
                     onDeleteItem={onDeleteItem}
                     moveItem={moveItem}
-                    updateOrder={updateOrder}
                   />
                 );
               default:

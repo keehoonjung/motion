@@ -101,8 +101,8 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
   );
 
   const updateOrder = useCallback(() => {
-    dataService.writeData(userId, items);
-  }, [items, dataService, userId]);
+    dataService.writeData(userId, updated);
+  }, []);
 
   return (
     <>
@@ -119,12 +119,7 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
       <div className={stylse.container}>
         <Header setOnCilck={setOnCilck} onLogout={onLogout} />
         <section className={stylse.item_container}>
-          <Item
-            items={items}
-            onDeleteItem={onDeleteItem}
-            moveItem={moveItem}
-            updateOrder={updateOrder}
-          />
+          <Item items={items} onDeleteItem={onDeleteItem} moveItem={moveItem} />
         </section>
         <footer className={stylse.footer}>
           <p>JK Motion</p>

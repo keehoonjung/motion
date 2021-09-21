@@ -1,10 +1,10 @@
 import React, { memo, useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { DragItemType, itemProps, ItemTypes } from "../item/item";
-import styles from "./todo_item.module.css";
+import styles from "./video_item.module.css";
 
-const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
-  const ref: React.LegacyRef<HTMLLIElement> = useRef(null);
+const VideoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
+  const ref: React.LegacyRef<HTMLDivElement> = useRef(null);
 
   const onClick = () => {
     onDeleteItem(card);
@@ -30,8 +30,6 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       const clientOffset = monitor.getClientOffset();
       const hoverClientY = clientOffset!.y - hoverBoundingRect!.top;
 
-      console.log("hover todo");
-
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
         return;
       }
@@ -41,7 +39,6 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       }
 
       moveItem(dragIndex, hoverIndex);
-      item.index = hoverIndex;
     },
   });
 
@@ -55,23 +52,25 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
 
   drag(drop(ref));
 
+  const url = convertToEmbeddedURL(card.url);
+
   return (
-    <li
-      ref={ref}
-      style={{ opacity: isDragging ? 0.5 : 1 }}
-      className={styles.list}
-    >
-      <div className={styles.container}>
-        <section className={styles.document}>
+    <li className={styles.list}>
+      <div
+        ref={ref}
+        style={{ opacity: isDragging ? 0.5 : 1 }}
+        className={styles.container}
+      >
+        <iframe
+          width="300"
+          height="200"
+          src={url}
+          title="YouTube video player"
+        ></iframe>
+        <div className={styles.description}>
           <h2 className={styles.title}>{card.title}</h2>
-          <input
-            className={styles.checkbox}
-            type="checkbox"
-            id="ReadBook"
-            name="ReadBook"
-          />
-          <label htmlFor="ReadBook">{card.text}</label>
-        </section>
+          <p className={styles.memo}> {card.text}</p>
+        </div>
         <button className={styles.deletebutton} onClick={onClick}>
           <i className="fas fa-times"></i>
         </button>
@@ -80,4 +79,15 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
   );
 });
 
-export default TodoItem;
+function convertToEmbeddedURL(url: string): string {
+  const regExp =
+    /(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-z0-9-]{11}))|(?:youtu.be\/([a-zA-z0-9-]{11})))/;
+  const match = url.match(regExp);
+  const videoId = match ? match[1] || match[2] : undefined;
+  if (videoId) {
+    return `https://www.youtube.com/embed/${videoId}`;
+  }
+  return url;
+}
+
+export default VideoItem;

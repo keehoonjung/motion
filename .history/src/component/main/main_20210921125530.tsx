@@ -100,10 +100,6 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
     [items]
   );
 
-  const updateOrder = useCallback(() => {
-    dataService.writeData(userId, items);
-  }, [items, dataService, userId]);
-
   return (
     <>
       {onDialog && (
@@ -119,12 +115,7 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
       <div className={stylse.container}>
         <Header setOnCilck={setOnCilck} onLogout={onLogout} />
         <section className={stylse.item_container}>
-          <Item
-            items={items}
-            onDeleteItem={onDeleteItem}
-            moveItem={moveItem}
-            updateOrder={updateOrder}
-          />
+          <Item items={items} onDeleteItem={onDeleteItem} moveItem={moveItem} />
         </section>
         <footer className={stylse.footer}>
           <p>JK Motion</p>

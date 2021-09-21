@@ -10,7 +10,6 @@ type ImageUploadProps = {
 const ImageUpload = memo(({ uploadService, uploadImage }: ImageUploadProps) => {
   const [loading, setLoading] = useState<Boolean>(true);
   const [name, setName] = useState<Boolean>(true);
-
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement>): void => {

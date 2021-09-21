@@ -28,19 +28,18 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
   const [onDialog, setOnDialog] = useState(false);
   const [type, setType] = useState("");
 
-  const setOnCilck = useCallback((type: string) => {
+  const setOnCilck = (type: string) => {
     setOnDialog(true);
     setType(type);
-  }, []);
-
-  const setExitCiick = useCallback(() => {
+  };
+  const setExitCiick = () => {
     setOnDialog(false);
     setType("");
-  }, []);
+  };
 
-  const onLogout = useCallback(() => {
+  const onLogout = () => {
     authService.logout();
-  }, [authService]);
+  };
 
   useEffect(() => {
     if (!userId) {
@@ -61,30 +60,24 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
     });
   }, [authService, userId, history]);
 
-  const onSubmitItem = useCallback(
-    (item: ItemType) => {
-      const updated = items ? [...items] : [];
-      updated.push(item);
+  const onSubmitItem = useCallback((item: ItemType) => {
+    const updated = items ? [...items] : [];
+    updated.push(item);
 
-      setItem(updated);
-      setOnDialog(false);
-      setType("");
-      dataService.writeData(userId, updated);
-    },
-    [items, dataService, userId]
-  );
+    setItem(updated);
+    setOnDialog(false);
+    setType("");
+    dataService.writeData(userId, updated);
+  });
 
-  const onDeleteItem = useCallback(
-    (item: ItemType) => {
-      const updated = [...items];
-      const deleteIndex = items.indexOf(item);
-      updated.splice(deleteIndex, 1);
-      setItem(updated);
-      dataService.deleteData(userId, deleteIndex);
-      dataService.writeData(userId, updated);
-    },
-    [items, dataService, userId]
-  );
+  const onDeleteItem = (item: ItemType) => {
+    const updated = [...items];
+    const deleteIndex = items.indexOf(item);
+    updated.splice(deleteIndex, 1);
+    setItem(updated);
+    dataService.deleteData(userId, deleteIndex);
+    dataService.writeData(userId, updated);
+  };
 
   const moveItem = useCallback(
     (dragIndex: number, hoberIndex: number) => {
@@ -94,15 +87,12 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
         const updated = [...items];
         updated.splice(dragIndex, 1);
         updated.splice(hoberIndex, 0, dragCard);
+        dataService.writeData(userId, updated);
         return updated;
       });
     },
-    [items]
+    [items, dataService, userId]
   );
-
-  const updateOrder = useCallback(() => {
-    dataService.writeData(userId, items);
-  }, [items, dataService, userId]);
 
   return (
     <>
@@ -119,12 +109,7 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
       <div className={stylse.container}>
         <Header setOnCilck={setOnCilck} onLogout={onLogout} />
         <section className={stylse.item_container}>
-          <Item
-            items={items}
-            onDeleteItem={onDeleteItem}
-            moveItem={moveItem}
-            updateOrder={updateOrder}
-          />
+          <Item items={items} onDeleteItem={onDeleteItem} moveItem={moveItem} />
         </section>
         <footer className={stylse.footer}>
           <p>JK Motion</p>

@@ -4,7 +4,7 @@ import { DragItemType, itemProps, ItemTypes } from "../item/item";
 import styles from "./todo_item.module.css";
 
 const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
-  const ref: React.LegacyRef<HTMLLIElement> = useRef(null);
+  const ref: React.LegacyRef<HTMLDivElement> = useRef(null);
 
   const onClick = () => {
     onDeleteItem(card);
@@ -30,7 +30,11 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       const clientOffset = monitor.getClientOffset();
       const hoverClientY = clientOffset!.y - hoverBoundingRect!.top;
 
-      console.log("hover todo");
+      console.log(`index: ${dragIndex}`);
+
+      console.log(`client : ${clientOffset!.y}`);
+      console.log(`hover : ${hoverBoundingRect!.top}`);
+      console.log(`middle : ${hoverMiddleY}`);
 
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
         return;
@@ -41,7 +45,6 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
       }
 
       moveItem(dragIndex, hoverIndex);
-      item.index = hoverIndex;
     },
   });
 
@@ -56,12 +59,12 @@ const TodoItem = memo(({ card, index, onDeleteItem, moveItem }: itemProps) => {
   drag(drop(ref));
 
   return (
-    <li
-      ref={ref}
-      style={{ opacity: isDragging ? 0.5 : 1 }}
-      className={styles.list}
-    >
-      <div className={styles.container}>
+    <li className={styles.list}>
+      <div
+        ref={ref}
+        style={{ opacity: isDragging ? 0.5 : 1 }}
+        className={styles.container}
+      >
         <section className={styles.document}>
           <h2 className={styles.title}>{card.title}</h2>
           <input

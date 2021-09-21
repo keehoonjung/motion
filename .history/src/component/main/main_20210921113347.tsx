@@ -28,19 +28,21 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
   const [onDialog, setOnDialog] = useState(false);
   const [type, setType] = useState("");
 
-  const setOnCilck = useCallback((type: string) => {
-    setOnDialog(true);
-    setType(type);
-  }, []);
-
-  const setExitCiick = useCallback(() => {
+  const setOnCilck = useCallback(
+    (type: string) => {
+      setOnDialog(true);
+      setType(type);
+    },
+    [type]
+  );
+  const setExitCiick = () => {
     setOnDialog(false);
     setType("");
-  }, []);
+  };
 
-  const onLogout = useCallback(() => {
+  const onLogout = () => {
     authService.logout();
-  }, [authService]);
+  };
 
   useEffect(() => {
     if (!userId) {
@@ -94,15 +96,12 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
         const updated = [...items];
         updated.splice(dragIndex, 1);
         updated.splice(hoberIndex, 0, dragCard);
+        dataService.writeData(userId, updated);
         return updated;
       });
     },
-    [items]
+    [items, dataService, userId]
   );
-
-  const updateOrder = useCallback(() => {
-    dataService.writeData(userId, items);
-  }, [items, dataService, userId]);
 
   return (
     <>
@@ -119,12 +118,7 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
       <div className={stylse.container}>
         <Header setOnCilck={setOnCilck} onLogout={onLogout} />
         <section className={stylse.item_container}>
-          <Item
-            items={items}
-            onDeleteItem={onDeleteItem}
-            moveItem={moveItem}
-            updateOrder={updateOrder}
-          />
+          <Item items={items} onDeleteItem={onDeleteItem} moveItem={moveItem} />
         </section>
         <footer className={stylse.footer}>
           <p>JK Motion</p>

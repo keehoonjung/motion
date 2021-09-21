@@ -10,6 +10,7 @@ type HeaderProps = {
 const Header = memo(({ setOnCilck, onLogout }: HeaderProps) => {
   return (
     <header className={styles.header}>
+      {console.log("hello")}
       <h1 className={styles.title}>MOTION</h1>
       <button className={styles.logout} onClick={onLogout}>
         logout

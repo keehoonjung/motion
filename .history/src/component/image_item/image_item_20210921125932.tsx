@@ -11,14 +11,6 @@ const ImageItem = memo(
       onDeleteItem(card);
     };
 
-    const [{ isDragging }, drag] = useDrag(() => ({
-      type: ItemTypes.ITEM,
-      item: { id: card.id, index },
-      collect: (monitor) => ({
-        isDragging: monitor.isDragging(),
-      }),
-    }));
-
     const [, drop] = useDrop({
       accept: ItemTypes.ITEM,
       hover(item: DragItemType, monitor) {
@@ -54,7 +46,16 @@ const ImageItem = memo(
         moveItem(dragIndex, hoverIndex);
         item.index = hoverIndex;
       },
+      updateOrder(),
     });
+
+    const [{ isDragging }, drag] = useDrag(() => ({
+      type: ItemTypes.ITEM,
+      item: { id: card.id, index },
+      collect: (monitor) => ({
+        isDragging: monitor.isDragging(),
+      }),
+    }));
 
     drag(drop(ref));
 
