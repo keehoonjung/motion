@@ -1,14 +1,14 @@
 import React, { memo } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { itemProps } from "../item/item";
-import styles from "./todo_item.module.css";
+import styles from "./image_item.module.css";
 
-const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
+const ImageItem = memo(({ card, index, onDeleteItem }: itemProps) => {
+  // const ref: React.LegacyRef<HTMLLIElement> = useRef(null);
+
   const onClick = () => {
     onDeleteItem(card, index);
   };
-
-  const onAddClick = () => {};
 
   return (
     <Draggable draggableId={card.id} index={index}>
@@ -20,18 +20,10 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
           className={styles.list}
         >
           <div className={styles.container}>
-            <section className={styles.document}>
+            <img className={styles.img} src={card.url} alt="" />
+            <section className={styles.description}>
               <h2 className={styles.title}>{card.title}</h2>
-              <input
-                className={styles.checkbox}
-                type="checkbox"
-                id="ReadBook"
-                name="ReadBook"
-              />
-              <label htmlFor="ReadBook">{card.text}</label>
-              <button className={styles.addbutton} onClick={onAddClick}>
-                <i className="fas fa-plus"></i>
-              </button>
+              <pre className={styles.memo}> {card.text}</pre>
             </section>
             <button className={styles.deletebutton} onClick={onClick}>
               <i className="fas fa-times"></i>
@@ -43,4 +35,4 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
   );
 });
 
-export default TodoItem;
+export default ImageItem;

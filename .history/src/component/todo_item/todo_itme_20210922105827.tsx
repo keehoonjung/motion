@@ -8,8 +8,6 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
     onDeleteItem(card, index);
   };
 
-  const onAddClick = () => {};
-
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
@@ -29,9 +27,7 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
                 name="ReadBook"
               />
               <label htmlFor="ReadBook">{card.text}</label>
-              <button className={styles.addbutton} onClick={onAddClick}>
-                <i className="fas fa-plus"></i>
-              </button>
+              <button className={styles.addbutton}>plus</button>
             </section>
             <button className={styles.deletebutton} onClick={onClick}>
               <i className="fas fa-times"></i>

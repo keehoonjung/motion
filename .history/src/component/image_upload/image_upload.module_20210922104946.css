@@ -16,14 +16,6 @@
   background-color: accent-color;
 }
 
-.container.notUpload {
-  background-color: grey;
-}
-
-.container.upload {
-  background-color: accent-color;
-}
-
 .uploadbutton {
   background-color: transparent;
   color: smokywhite;

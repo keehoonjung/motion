@@ -33,7 +33,7 @@ const ImageUpload = memo(({ uploadService, uploadImage }: ImageUploadProps) => {
   }, []);
 
   return (
-    <div className={`${styles.container} ${uploadCheck(name)}`}>
+    <div className={styles.container}>
       {!loading && (
         <button className={styles.uploadbutton} onClick={onClick}>
           {name ? "Done" : "No file"}
@@ -55,7 +55,7 @@ const ImageUpload = memo(({ uploadService, uploadImage }: ImageUploadProps) => {
   );
 });
 
-const uploadCheck = (name: Boolean) => {
+const uploadCheck = (name: boolean) => {
   if (!name) {
     return styles.notUpload;
   }

@@ -17,11 +17,7 @@
 }
 
 .container.notUpload {
-  background-color: grey;
-}
-
-.container.upload {
-  background-color: accent-color;
+  background-color: lightgray;
 }
 
 .uploadbutton {

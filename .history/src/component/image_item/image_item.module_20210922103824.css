@@ -1,4 +1,4 @@
-@value accent-color, text-accent-color, component-bg-gradient,border-color,shadow-color,smokywhite from "/src/common/colors.css";
+@value accent-color,text-accent-color, component-bg-gradient,border-color,shadow-color,smokywhite from "/src/common/colors.css";
 
 .list {
   width: 90%;
@@ -14,11 +14,15 @@
   display: flex;
 }
 
-.document {
+.description {
   flex: 100%;
   padding-left: 1rem;
-  padding-bottom: 1em;
   color: smokywhite;
+}
+
+.img {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 .title {
@@ -27,24 +31,11 @@
   margin-top: 1rem;
 }
 
-.checkbox {
+.memo {
   font-size: 1rem;
   margin: 0;
   margin-top: 1rem;
-  padding-left: 0.3rem;
-  color: smokywhite;
-  margin-right: 0.5rem;
-}
-
-.addbutton {
-  background-color: transparent;
-  margin-left: 0.3rem;
-  color: accent-color;
-  transition: transform 180ms ease-in;
-}
-
-.addbutton:hover {
-  transform: scale(1.1);
+  padding-left: 0;
 }
 
 .deletebutton {

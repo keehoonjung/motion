@@ -33,9 +33,12 @@ const ImageUpload = memo(({ uploadService, uploadImage }: ImageUploadProps) => {
   }, []);
 
   return (
-    <div className={`${styles.container} ${uploadCheck(name)}`}>
+    <div className={styles.container}>
       {!loading && (
-        <button className={styles.uploadbutton} onClick={onClick}>
+        <button
+          className={`${styles.uploadbutton} ${uploadCheck(name)}`}
+          onClick={onClick}
+        >
           {name ? "Done" : "No file"}
         </button>
       )}

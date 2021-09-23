@@ -8,8 +8,6 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
     onDeleteItem(card, index);
   };
 
-  const onAddClick = () => {};
-
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (

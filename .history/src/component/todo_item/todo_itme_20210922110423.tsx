@@ -28,7 +28,8 @@ const TodoItem = memo(({ card, index, onDeleteItem }: itemProps) => {
                 id="ReadBook"
                 name="ReadBook"
               />
-              <label htmlFor="ReadBook">{card.text}</label>
+              <input type="text" value={card.text} />
+              {/* <label htmlFor="ReadBook">{card.text}</label> */}
               <button className={styles.addbutton} onClick={onAddClick}>
                 <i className="fas fa-plus"></i>
               </button>
