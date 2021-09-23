@@ -1,0 +1,18 @@
+.checkbox {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1rem;
+  padding-left: 0.3rem;
+  color: smokywhite;
+  margin-right: 0.5rem;
+}
+.addbutton {
+  background-color: transparent;
+  margin-left: 0.3rem;
+  color: accent-color;
+  transition: transform 180ms ease-in;
+}
+
+.addbutton:hover {
+  transform: scale(1.1);
+}

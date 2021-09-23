@@ -1,0 +1,30 @@
+@value accent-color, smokywhite from "/src/common/colors.css";
+
+.checkbox {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin: 0;
+  padding-left: 0.3rem;
+  color: smokywhite;
+  margin-right: 0.5rem;
+}
+
+.text {
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: smokywhite;
+  font-size: 1rem;
+}
+
+.addbutton {
+  background-color: transparent;
+  margin-left: 0.3rem;
+  color: accent-color;
+  transition: transform 180ms ease-in;
+}
+
+.addbutton:hover {
+  transform: scale(1.1);
+}

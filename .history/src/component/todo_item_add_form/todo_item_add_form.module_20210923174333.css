@@ -1,0 +1,22 @@
+@value smokywhite,text-edit-bg-color from "/src/common/colors.css";
+
+.container {
+  margin-top: 0.5rem;
+}
+
+.checkbox {
+  font-size: 1rem;
+  margin: 0;
+  padding-left: 0.3rem;
+  color: smokywhite;
+  margin-right: 0.5rem;
+}
+
+.text {
+  outline: none;
+  border: none;
+  padding: 0.5rem 0;
+  background-color: text-edit-bg-color;
+  color: smokywhite;
+  font-size: 1rem;
+}

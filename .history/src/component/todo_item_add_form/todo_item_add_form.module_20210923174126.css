@@ -1,0 +1,18 @@
+@value border-color, accent-color,component-bg-gradient, text-accent-color, document-bg-color, text-edit-bg-color,smokywhite from "/src/common/colors.css";
+
+.checkbox {
+  font-size: 1rem;
+  margin: 0;
+  padding-left: 0.3rem;
+  color: smokywhite;
+  margin-right: 0.5rem;
+}
+
+.text {
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: text-edit-bg-color;
+  color: smokywhite;
+  font-size: 1rem;
+}
