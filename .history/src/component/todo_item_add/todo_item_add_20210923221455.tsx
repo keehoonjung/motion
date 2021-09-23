@@ -3,7 +3,7 @@ import styles from "./todo_item_add.module.css";
 
 type TodoItemAddProps = {
   text: string;
-  index: string;
+  index: number;
   onAddButton(): void;
 };
 

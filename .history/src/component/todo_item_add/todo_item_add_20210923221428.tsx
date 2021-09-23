@@ -3,20 +3,20 @@ import styles from "./todo_item_add.module.css";
 
 type TodoItemAddProps = {
   text: string;
-  index: string;
+  index: numberu;
   onAddButton(): void;
 };
 
-const TodoItemAdd = ({ text, index, onAddButton }: TodoItemAddProps) => {
+const TodoItemAdd = ({ text, onAddButton }: TodoItemAddProps) => {
   return (
     <div className={styles.container}>
       <input
         className={styles.checkbox}
         type="checkbox"
-        id={index}
+        id="todo"
         name="ReadBook"
       />
-      <label className={styles.text} htmlFor={index}>
+      <label className={styles.text} htmlFor="todo">
         {text}
       </label>
       <button className={styles.addbutton} onClick={onAddButton}>

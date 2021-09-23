@@ -41,7 +41,7 @@ const TodoItem = memo(
                   <TodoItemAdd
                     key={index}
                     text={todo}
-                    index={`${card.id} ${index.toString()}`}
+                    index={index.toString()}
                     onAddButton={onAddButton}
                   />
                 ))}
