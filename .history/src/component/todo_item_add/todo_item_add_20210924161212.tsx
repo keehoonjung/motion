@@ -6,13 +6,12 @@ type TodoItemAddProps = {
   index: number;
   id: string;
   onAddButton(): void;
-  onDeleteButton(index: number): void;
+  onDeleteButton(id: string): void;
 };
 
 const TodoItemAdd = ({
   text,
   index,
-  id,
   onAddButton,
   onDeleteButton,
 }: TodoItemAddProps) => {

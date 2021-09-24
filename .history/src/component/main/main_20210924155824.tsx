@@ -64,6 +64,7 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
       return;
     }
     dataService.readData(userId, (data: InitData) => {
+      console.log(data);
       data && setInitData(data);
     });
   }, [userId, dataService]);
@@ -129,41 +130,20 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
     [initData, dataService, userId]
   );
 
-  const onAddTodoItem = useCallback(
-    (item: ItemType, todo: string) => {
-      const itemUpdated = { ...initData.items };
-      const newItem = { ...item };
-      newItem.todolist.push(todo);
-      itemUpdated[item.id] = newItem;
+  const onAddTodoItem = (item: ItemType, todo: string) => {
+    const itemUpdated = { ...initData.items };
+    const newItem = { ...item };
+    newItem.todolist.push(todo);
+    itemUpdated[item.id] = newItem;
 
-      const newData = {
-        ...initData,
-        items: itemUpdated,
-      };
+    const newData = {
+      ...initData,
+      items: itemUpdated,
+    };
 
-      setInitData(newData);
-      dataService.writeData(userId, newData);
-    },
-    [initData, dataService, userId]
-  );
-
-  const onDeleteTodoItem = useCallback(
-    (item: ItemType, index: number) => {
-      const itemUpdated = { ...initData.items };
-      const newItem = { ...item };
-      newItem.todolist.splice(index, 1);
-      itemUpdated[item.id] = newItem;
-
-      const newData = {
-        ...initData,
-        items: itemUpdated,
-      };
-
-      setInitData(newData);
-      dataService.writeData(userId, newData);
-    },
-    [initData, dataService, userId]
-  );
+    setInitData(newData);
+    dataService.writeData(userId, newData);
+  };
 
   const onDragEnd = useCallback(
     (result: DropResult) => {
@@ -224,13 +204,14 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
         <Header setOnCilck={setOnCilck} onLogout={onLogout} />
         <DragDropContext onDragEnd={onDragEnd}>
           <section className={stylse.item_container}>
-            <Item
-              items={initData.items}
-              column={setColumn}
-              onDeleteItem={onDeleteItem}
-              onAddTodoItem={onAddTodoItem}
-              onDeleteTodoItem={onDeleteTodoItem}
-            />
+            {initData && (
+              <Item
+                items={initData.items}
+                column={setColumn}
+                onDeleteItem={onDeleteItem}
+                onAddTodoItem={onAddTodoItem}
+              />
+            )}
           </section>
         </DragDropContext>
         <footer className={stylse.footer}>

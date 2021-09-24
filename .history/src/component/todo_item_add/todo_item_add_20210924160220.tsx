@@ -3,37 +3,27 @@ import styles from "./todo_item_add.module.css";
 
 type TodoItemAddProps = {
   text: string;
-  index: number;
-  id: string;
+  index: string;
   onAddButton(): void;
-  onDeleteButton(index: number): void;
+  onDeleteButton(): void;
 };
 
-const TodoItemAdd = ({
-  text,
-  index,
-  id,
-  onAddButton,
-  onDeleteButton,
-}: TodoItemAddProps) => {
-  const onClickDeleteButton = () => {
-    onDeleteButton(index);
-  };
+const TodoItemAdd = ({ text, index, onAddButton }: TodoItemAddProps) => {
   return (
     <div className={styles.container}>
       <input
         className={styles.checkbox}
         type="checkbox"
-        id={id}
+        id={index}
         name="ReadBook"
       />
-      <label className={styles.text} htmlFor={id}>
+      <label className={styles.text} htmlFor={index}>
         {text}
       </label>
       <button className={styles.addbutton} onClick={onAddButton}>
         <i className="fas fa-plus"></i>
       </button>
-      <button className={styles.deletebutton} onClick={onClickDeleteButton}>
+      <button className={styles.deletebutton} onClick={onDeleteButton}>
         <i className="fas fa-trash-alt"></i>
       </button>
     </div>

@@ -3,16 +3,14 @@ import styles from "./todo_item_add.module.css";
 
 type TodoItemAddProps = {
   text: string;
-  index: number;
-  id: string;
+  index: string;
   onAddButton(): void;
-  onDeleteButton(index: number): void;
+  onDeleteButton(id: string): void;
 };
 
 const TodoItemAdd = ({
   text,
   index,
-  id,
   onAddButton,
   onDeleteButton,
 }: TodoItemAddProps) => {
@@ -24,10 +22,10 @@ const TodoItemAdd = ({
       <input
         className={styles.checkbox}
         type="checkbox"
-        id={id}
+        id={index}
         name="ReadBook"
       />
-      <label className={styles.text} htmlFor={id}>
+      <label className={styles.text} htmlFor={index}>
         {text}
       </label>
       <button className={styles.addbutton} onClick={onAddButton}>

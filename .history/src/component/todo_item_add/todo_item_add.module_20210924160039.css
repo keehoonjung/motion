@@ -31,15 +31,8 @@
 }
 
 .deletebutton {
-  background-color: transparent;
-  color: accent-color;
-  transition: transform 180ms ease-in;
 }
 
 .addbutton:hover {
-  transform: scale(1.1);
-}
-
-.deletebutton:hover {
   transform: scale(1.1);
 }

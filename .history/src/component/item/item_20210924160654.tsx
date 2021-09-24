@@ -30,7 +30,7 @@ export type itemsProps = {
   column: ColumnType;
   onDeleteItem: (item: ItemType, index: number) => void;
   onAddTodoItem(item: ItemType, todo: string): void;
-  onDeleteTodoItem(item: ItemType, index: number): void;
+  onDeleteTodoItem(item: ItemType, id: string): void;
 };
 
 export type itemProps = {
@@ -40,13 +40,7 @@ export type itemProps = {
 };
 
 const Item = memo(
-  ({
-    items,
-    column,
-    onDeleteItem,
-    onAddTodoItem,
-    onDeleteTodoItem,
-  }: itemsProps) => {
+  ({ items, column, onDeleteItem, onAddTodoItem }: itemsProps) => {
     return (
       <Droppable droppableId={column.id}>
         {(provided) => (
@@ -94,7 +88,6 @@ const Item = memo(
                         index={index}
                         onDeleteItem={onDeleteItem}
                         onAddTodoItem={onAddTodoItem}
-                        onDeleteTodoItem={onDeleteTodoItem}
                       />
                     );
                   default:

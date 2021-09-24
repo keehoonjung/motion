@@ -39,7 +39,3 @@
 .addbutton:hover {
   transform: scale(1.1);
 }
-
-.deletebutton:hover {
-  transform: scale(1.1);
-}

@@ -7,7 +7,7 @@ import styles from "./todo_item.module.css";
 
 type TodoItemProps = itemProps & {
   onAddTodoItem(item: ItemType, todo: string): void;
-  onDeleteTodoItem(item: ItemType, index: number): void;
+  onDeleteTodoItem(item: ItemType, id: string): void;
 };
 
 const TodoItem = memo(
@@ -32,8 +32,8 @@ const TodoItem = memo(
       setAddTodo(true);
     };
 
-    const onDeleteButton = (index: number) => {
-      onDeleteTodoItem(card, index);
+    const onDeleteButton = (id: string) => {
+      onDeleteTodoItem(card, id);
     };
 
     return (
@@ -53,7 +53,6 @@ const TodoItem = memo(
                     key={index}
                     text={todo}
                     index={index}
-                    id={`${card.id} ${index.toString()}`}
                     onAddButton={onAddButton}
                     onDeleteButton={onDeleteButton}
                   />

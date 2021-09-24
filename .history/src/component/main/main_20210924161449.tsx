@@ -129,41 +129,35 @@ const Main = ({ FileInput, dataService, authService }: MainProps) => {
     [initData, dataService, userId]
   );
 
-  const onAddTodoItem = useCallback(
-    (item: ItemType, todo: string) => {
-      const itemUpdated = { ...initData.items };
-      const newItem = { ...item };
-      newItem.todolist.push(todo);
-      itemUpdated[item.id] = newItem;
+  const onAddTodoItem = (item: ItemType, todo: string) => {
+    const itemUpdated = { ...initData.items };
+    const newItem = { ...item };
+    newItem.todolist.push(todo);
+    itemUpdated[item.id] = newItem;
 
-      const newData = {
-        ...initData,
-        items: itemUpdated,
-      };
+    const newData = {
+      ...initData,
+      items: itemUpdated,
+    };
 
-      setInitData(newData);
-      dataService.writeData(userId, newData);
-    },
-    [initData, dataService, userId]
-  );
+    setInitData(newData);
+    dataService.writeData(userId, newData);
+  };
 
-  const onDeleteTodoItem = useCallback(
-    (item: ItemType, index: number) => {
-      const itemUpdated = { ...initData.items };
-      const newItem = { ...item };
-      newItem.todolist.splice(index, 1);
-      itemUpdated[item.id] = newItem;
+  const onDeleteTodoItem = (item: ItemType, index: number) => {
+    const itemUpadted = { ...initData.items };
+    const newItem = { ...item };
+    newItem.todolist.splice(index, 1);
+    itemUpadted[item.id] = newItem;
 
-      const newData = {
-        ...initData,
-        items: itemUpdated,
-      };
+    const newData = {
+      ...initData,
+      items: itemUpdated,
+    };
 
-      setInitData(newData);
-      dataService.writeData(userId, newData);
-    },
-    [initData, dataService, userId]
-  );
+    setInitData(newData);
+    dataService.writeData(userId, newData);
+  };
 
   const onDragEnd = useCallback(
     (result: DropResult) => {

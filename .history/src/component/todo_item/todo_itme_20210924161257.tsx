@@ -1,5 +1,6 @@
 import React, { memo, useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
+import { idText } from "typescript";
 import { itemProps, ItemType } from "../item/item";
 import TodoItemAdd from "../todo_item_add/todo_item_add";
 import TodoItemAddForm from "../todo_item_add_form/todo_item_add_form";
@@ -7,7 +8,7 @@ import styles from "./todo_item.module.css";
 
 type TodoItemProps = itemProps & {
   onAddTodoItem(item: ItemType, todo: string): void;
-  onDeleteTodoItem(item: ItemType, index: number): void;
+  onDeleteTodoItem(item: ItemType, id: string): void;
 };
 
 const TodoItem = memo(
