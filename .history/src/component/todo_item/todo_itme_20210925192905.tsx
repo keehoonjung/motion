@@ -24,6 +24,7 @@ const TodoItem = memo(
     };
 
     const onAddItem = (todo: string) => {
+      setAddTodo(false);
       onAddTodoItem(card, todo);
     };
 
@@ -31,7 +32,7 @@ const TodoItem = memo(
       setAddTodo(true);
     };
 
-    const offAddForm = () => {
+    const offAddFrom = () => {
       setAddTodo(false);
     };
 
@@ -50,15 +51,7 @@ const TodoItem = memo(
           >
             <div className={styles.container}>
               <section className={styles.document}>
-                <div className={styles.title}>
-                  <h2 className={styles.title__text}>{card.title}</h2>
-                  <button
-                    className={styles.title__addbutton}
-                    onClick={onAddButton}
-                  >
-                    <i className="fas fa-plus"></i>
-                  </button>
-                </div>
+                <h2 className={styles.title}>{card.title}</h2>
                 {card.todolist.map((todo, index) => (
                   <TodoItemAdd
                     key={index}
@@ -69,12 +62,7 @@ const TodoItem = memo(
                     onDeleteButton={onDeleteButton}
                   />
                 ))}
-                {addTodo && (
-                  <TodoItemAddForm
-                    onAddItem={onAddItem}
-                    offAddForm={offAddForm}
-                  />
-                )}
+                {addTodo && <TodoItemAddForm onAddItem={onAddItem} />}
               </section>
               <button className={styles.deletebutton} onClick={onClick}>
                 <i className="fas fa-times"></i>

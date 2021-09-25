@@ -36,7 +36,6 @@ const TodoItemAddForm = memo(
           type="text"
           onKeyUp={onSubmit}
           onKeyDown={onKeyDown}
-          autoFocus
         />
       </div>
     );

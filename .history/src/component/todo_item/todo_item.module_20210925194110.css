@@ -23,6 +23,7 @@
 
 .title {
   display: flex;
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -36,11 +37,6 @@
   color: accent-color;
   font-size: 1.2rem;
   transition: transform 180ms ease-in;
-  padding: 0.4rem 0.5rem;
-}
-
-.title__addbutton:hover {
-  transform: scale(1.2);
 }
 
 .deletebutton {

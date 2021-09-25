@@ -39,10 +39,6 @@
   padding: 0.4rem 0.5rem;
 }
 
-.title__addbutton:hover {
-  transform: scale(1.2);
-}
-
 .deletebutton {
   background-color: transparent;
   color: accent-color;

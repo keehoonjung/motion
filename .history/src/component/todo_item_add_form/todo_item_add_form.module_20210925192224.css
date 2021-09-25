@@ -1,4 +1,4 @@
-@value accent-color,smokywhite from "/src/common/colors.css";
+@value smokywhite,text-edit-bg-color from "/src/common/colors.css";
 
 .container {
   margin-top: 0.5rem;
@@ -15,18 +15,11 @@
 }
 
 .text {
+  width: 5rem;
   outline: none;
   border: none;
   box-sizing: border-box;
   background-color: transparent;
   color: smokywhite;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.deletebutton {
-  background-color: transparent;
-  color: accent-color;
-  font-size: 1rem;
-  transition: transform 180ms ease-in;
+  font-size: 0.8rem;
 }

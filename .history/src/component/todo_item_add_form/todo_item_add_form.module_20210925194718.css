@@ -15,6 +15,7 @@
 }
 
 .text {
+  width: 3.2rem;
   outline: none;
   border: none;
   box-sizing: border-box;

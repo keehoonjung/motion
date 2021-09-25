@@ -23,12 +23,13 @@
 
 .title {
   display: flex;
-  margin-top: 1rem;
+  justify-content: center;
 }
 
 .title__text {
   color: text-accent-color;
   margin: 0;
+  margin-top: 1rem;
 }
 
 .title__addbutton {
@@ -36,11 +37,6 @@
   color: accent-color;
   font-size: 1.2rem;
   transition: transform 180ms ease-in;
-  padding: 0.4rem 0.5rem;
-}
-
-.title__addbutton:hover {
-  transform: scale(1.2);
 }
 
 .deletebutton {

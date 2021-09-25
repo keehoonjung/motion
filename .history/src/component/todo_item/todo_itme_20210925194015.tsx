@@ -52,10 +52,7 @@ const TodoItem = memo(
               <section className={styles.document}>
                 <div className={styles.title}>
                   <h2 className={styles.title__text}>{card.title}</h2>
-                  <button
-                    className={styles.title__addbutton}
-                    onClick={onAddButton}
-                  >
+                  <button className={styles.title__addbutton}>
                     <i className="fas fa-plus"></i>
                   </button>
                 </div>
