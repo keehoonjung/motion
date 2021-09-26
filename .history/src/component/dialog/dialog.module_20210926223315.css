@@ -1,0 +1,88 @@
+@value border-color, accent-color,component-bg-gradient, text-accent-color, document-bg-color, text-edit-bg-color,smokywhite from "/src/common/colors.css";
+@value media-size from "/src/common/size.css";
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 34rem;
+  height: 13rem;
+  background: #57575770 component-bg-gradient;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.title {
+  margin: 0;
+  color: text-accent-color;
+  font-size: 1rem;
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  color: smokywhite;
+  font-weight: bold;
+  background-color: text-edit-bg-color;
+  border: 1px solid border-color;
+  outline: none;
+}
+
+.exitbutton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  color: accent-color;
+  font-size: 1rem;
+  transition: transform 180ms ease-in;
+}
+
+.exitbutton:hover {
+  transform: scale(1.1);
+}
+
+.addbutton {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  padding: 0.5rem;
+  background-color: accent-color;
+  color: smokywhite;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: transform 180ms ease-in;
+}
+
+.addbutton:hover {
+  transform: scale(1.05);
+}
+
+.textarea {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1rem;
+  border: none;
+  border: 1px solid border-color;
+  padding-left: 0.5rem;
+  color: smokywhite;
+  font-weight: bold;
+  background-color: text-edit-bg-color;
+  outline: none;
+  resize: none;
+}
+
+@media screen and (max-width: media-size) {
+  .container {
+    width: 98%;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+}

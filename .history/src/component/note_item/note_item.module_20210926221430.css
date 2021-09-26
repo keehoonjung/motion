@@ -1,0 +1,66 @@
+@value accent-color,text-accent-color, component-bg-gradient,border-color,shadow-color,smokywhite from "/src/common/colors.css";
+@value media-size from "/src/common/size.css";
+
+.list {
+  width: 90%;
+  background: component-bg-gradient;
+  margin: auto;
+  margin-top: 1rem;
+  border: 1px solid border-color;
+  box-shadow: 3px 3px 8px 2px shadow-color;
+  border-radius: 0.5rem;
+}
+
+.container {
+  display: flex;
+}
+
+.document {
+  flex: 100%;
+  padding-left: 1rem;
+  padding-bottom: 1em;
+  color: smokywhite;
+}
+
+.title {
+  color: text-accent-color;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.deletebutton {
+  background-color: transparent;
+  color: accent-color;
+  font-size: 1.2rem;
+  transition: transform 180ms ease-in;
+}
+
+.deletebutton:hover {
+  transform: scale(1.3);
+}
+
+@media screen and (max-width: media-size) {
+  .list {
+    width: 98%;
+    margin-top: 0.5rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .memo {
+    font-size: 0.8rem;
+  }
+
+  .video {
+    height: 100px;
+    width: 150px;
+  }
+}

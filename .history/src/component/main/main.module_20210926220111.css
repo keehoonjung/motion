@@ -1,0 +1,44 @@
+@value document-bg-color, bg-main-color from "/src/common/colors.css";
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 70%;
+  max-width: 60rem;
+  margin: auto;
+  z-index: 0;
+}
+
+.item_container {
+  flex: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: document-bg-color;
+}
+
+.footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: bg-main-color;
+}
+
+.background {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: bg-main-color;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
