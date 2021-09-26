@@ -55,11 +55,10 @@
   color: smokywhite;
   font-size: 0.8rem;
   font-weight: bold;
-  transition: transform 180ms ease-in;
 }
 
 .addbutton:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .textarea {

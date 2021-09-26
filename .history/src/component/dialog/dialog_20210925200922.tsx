@@ -28,7 +28,7 @@ const Dialog = memo(
       setUrl(uploadUrl);
     }, []);
 
-    const onSubmit = (event: React.FormEvent): void => {
+    const onSubmit = (event: React.MouseEvent<HTMLButtonElement>): void => {
       event.preventDefault();
       const item = {
         id: Date.now().toString(),
@@ -90,14 +90,16 @@ const Dialog = memo(
     }
 
     return (
-      <form ref={formRef} className={styles.container} onSubmit={onSubmit}>
+      <form ref={formRef} className={styles.container}>
         <button className={styles.exitbutton} onClick={onClick}>
           <i className="fas fa-times"></i>
         </button>
         <h2 className={styles.title}>Title</h2>
         <input ref={titleRef} className={styles.input} type="text" />
         {typeSelector(type)}
-        <button className={styles.addbutton}>Add</button>
+        <button className={styles.addbutton} onClick={onSubmit}>
+          Add
+        </button>
       </form>
     );
   }

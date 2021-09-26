@@ -37,7 +37,7 @@
   background-color: transparent;
   color: accent-color;
   font-size: 1rem;
-  transition: transform 180ms ease-in;
+  transition: transform 300ms ease-in;
 }
 
 .exitbutton:hover {
@@ -55,11 +55,6 @@
   color: smokywhite;
   font-size: 0.8rem;
   font-weight: bold;
-  transition: transform 180ms ease-in;
-}
-
-.addbutton:hover {
-  transform: scale(1.05);
 }
 
 .textarea {

@@ -28,7 +28,7 @@ const Dialog = memo(
       setUrl(uploadUrl);
     }, []);
 
-    const onSubmit = (event: React.FormEvent): void => {
+    const onSubmit = (event: React.FormEventHandler<HTMLFormElement>): void => {
       event.preventDefault();
       const item = {
         id: Date.now().toString(),
