@@ -8,7 +8,7 @@ type TodoItemAddProps = {
   id: string;
   onAddButton(): void;
   onDeleteButton(index: number): void;
-  onCheckedTodo(index: number, checked: boolean): void;
+  onCheckedTodo(todo: TodoInterface, checked: boolean): void;
 };
 
 const TodoItemAdd = memo(
@@ -23,26 +23,34 @@ const TodoItemAdd = memo(
     const checkRef = useRef<HTMLInputElement>(null);
     const onClick = () => {
       const checked = checkRef.current!.checked;
-      onCheckedTodo(index, checked);
-    };
-    const onchange = () => {
-      checkRef.current!.checked = todo.checked;
+      onCheckedTodo(todo, checked);
+      console.log(checkRef.current!.checked);
     };
     const onClickDeleteButton = () => {
       onDeleteButton(index);
     };
     return (
       <div className={styles.container}>
-        <input
-          ref={checkRef}
-          className={styles.checkbox}
-          type="checkbox"
-          id={id}
-          onClick={onClick}
-          name="ReadBook"
-          checked={todo.checked}
-          onChange={onchange}
-        />
+        {todo.checked ? (
+          <input
+            ref={checkRef}
+            className={styles.checkbox}
+            type="checkbox"
+            id={id}
+            onClick={onClick}
+            name="ReadBook"
+            checked
+          />
+        ) : (
+          <input
+            ref={checkRef}
+            className={styles.checkbox}
+            type="checkbox"
+            id={id}
+            onClick={onClick}
+            name="ReadBook"
+          />
+        )}
         <label className={styles.text} htmlFor={id}>
           {todo.text}
         </label>

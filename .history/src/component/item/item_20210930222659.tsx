@@ -10,7 +10,7 @@ import TodoItem from "../todo_item/todo_itme";
 import VideoItem from "../video_item/video_item";
 import styles from "./item.module.css";
 
-export interface TodoInterface {
+interface TodoInterface {
   text: string;
   checked: boolean;
 }
@@ -21,7 +21,7 @@ export type ItemType = {
   title: string;
   text: string;
   url: string;
-  todolist: Array<TodoInterface>;
+  todolist: string[];
 };
 
 export const ItemTypes = {

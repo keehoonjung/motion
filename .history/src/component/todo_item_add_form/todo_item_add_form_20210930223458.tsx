@@ -2,7 +2,7 @@ import React, { memo, useRef } from "react";
 import styles from "./todo_item_add_form.module.css";
 
 type TodoItemAddFromProps = {
-  onAddItem(text: string): void;
+  onAddItem(todo: string): void;
   offAddForm(): void;
 };
 

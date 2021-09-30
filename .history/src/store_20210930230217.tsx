@@ -2,6 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { dataService } from "./index";
 import { ItemType, TodoInterface } from "./component/item/item";
 import { InitData } from "./component/main/main";
+import { isMetaProperty } from "typescript";
 
 export type dataInitalState = {
   userId: string | undefined;

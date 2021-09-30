@@ -45,7 +45,7 @@ type deleteTodoAction = {
 
 type checkedTodoAction = {
   type: string;
-  payload: { item: ItemType; index: number; checked: boolean };
+  payload: { item: ItemType; todo: TodoInterface; checked: boolean };
 };
 
 const dataSlice = createSlice({
@@ -106,8 +106,8 @@ const dataSlice = createSlice({
     },
     checkedTodo: (state: dataInitalState, action: checkedTodoAction) => {
       const item = state.data.items[action.payload.item.id];
-      item.todolist[action.payload.index].checked = action.payload.checked;
-      dataService.writeData(state.userId!, state.data);
+      const todo = action.payload.todo;
+      item.todolist.indexOf(todo);
     },
   },
 });

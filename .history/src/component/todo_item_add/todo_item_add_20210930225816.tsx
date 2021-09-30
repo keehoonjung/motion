@@ -24,25 +24,33 @@ const TodoItemAdd = memo(
     const onClick = () => {
       const checked = checkRef.current!.checked;
       onCheckedTodo(index, checked);
-    };
-    const onchange = () => {
-      checkRef.current!.checked = todo.checked;
+      console.log(checkRef.current!.checked);
     };
     const onClickDeleteButton = () => {
       onDeleteButton(index);
     };
     return (
       <div className={styles.container}>
-        <input
-          ref={checkRef}
-          className={styles.checkbox}
-          type="checkbox"
-          id={id}
-          onClick={onClick}
-          name="ReadBook"
-          checked={todo.checked}
-          onChange={onchange}
-        />
+        {todo.checked ? (
+          <input
+            ref={checkRef}
+            className={styles.checkbox}
+            type="checkbox"
+            id={id}
+            onClick={onClick}
+            name="ReadBook"
+            checked
+          />
+        ) : (
+          <input
+            ref={checkRef}
+            className={styles.checkbox}
+            type="checkbox"
+            id={id}
+            onClick={onClick}
+            name="ReadBook"
+          />
+        )}
         <label className={styles.text} htmlFor={id}>
           {todo.text}
         </label>

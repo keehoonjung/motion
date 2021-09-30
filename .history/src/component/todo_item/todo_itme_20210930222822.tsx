@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { deleteItem, addTodo, deleteTodo, checkedTodo } from "../../store";
+import { deleteItem, addTodo, deleteTodo } from "../../store";
 import { itemProps } from "../item/item";
 import TodoItemAdd from "../todo_item_add/todo_item_add";
 import TodoItemAddForm from "../todo_item_add_form/todo_item_add_form";
@@ -14,17 +14,12 @@ const TodoItem = memo(({ item, index, dispatch }: itemProps) => {
     dispatch(deleteItem({ index, item }));
   };
 
-  const onAddItem = (text: string) => {
-    const todo = { text, checked: false };
+  const onAddItem = (todo: string) => {
     dispatch(addTodo({ item, todo }));
   };
 
   const onDeleteButton = (index: number) => {
     dispatch(deleteTodo({ item, index }));
-  };
-
-  const onCheckedTodo = (index: number, checked: boolean) => {
-    dispatch(checkedTodo({ item, index, checked }));
   };
 
   const onAddButton = () => {
@@ -59,12 +54,11 @@ const TodoItem = memo(({ item, index, dispatch }: itemProps) => {
                 item.todolist.map((todo, index) => (
                   <TodoItemAdd
                     key={index}
-                    todo={todo}
+                    todo={todo.text}
                     index={index}
                     id={`${item.id} ${index.toString()}`}
                     onAddButton={onAddButton}
                     onDeleteButton={onDeleteButton}
-                    onCheckedTodo={onCheckedTodo}
                   />
                 ))}
               {onAddForm && (

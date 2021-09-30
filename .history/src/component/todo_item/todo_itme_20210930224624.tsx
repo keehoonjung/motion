@@ -3,7 +3,7 @@ import { Draggable } from "react-beautiful-dnd";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { deleteItem, addTodo, deleteTodo, checkedTodo } from "../../store";
-import { itemProps } from "../item/item";
+import { itemProps, TodoInterface } from "../item/item";
 import TodoItemAdd from "../todo_item_add/todo_item_add";
 import TodoItemAddForm from "../todo_item_add_form/todo_item_add_form";
 import styles from "./todo_item.module.css";
@@ -23,8 +23,8 @@ const TodoItem = memo(({ item, index, dispatch }: itemProps) => {
     dispatch(deleteTodo({ item, index }));
   };
 
-  const onCheckedTodo = (index: number, checked: boolean) => {
-    dispatch(checkedTodo({ item, index, checked }));
+  const onCheckedTodo = (todo: TodoInterface, chekcked: boolean) => {
+    dispatch(checkedTodo(item, todo, checked));
   };
 
   const onAddButton = () => {

@@ -24,6 +24,7 @@ const TodoItemAdd = memo(
     const onClick = () => {
       const checked = checkRef.current!.checked;
       onCheckedTodo(index, checked);
+      console.log(checkRef.current!.checked);
     };
     const onchange = () => {
       checkRef.current!.checked = todo.checked;

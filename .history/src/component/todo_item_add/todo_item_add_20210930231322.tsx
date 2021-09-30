@@ -24,9 +24,7 @@ const TodoItemAdd = memo(
     const onClick = () => {
       const checked = checkRef.current!.checked;
       onCheckedTodo(index, checked);
-    };
-    const onchange = () => {
-      checkRef.current!.checked = todo.checked;
+      console.log(checkRef.current!.checked);
     };
     const onClickDeleteButton = () => {
       onDeleteButton(index);
@@ -41,7 +39,6 @@ const TodoItemAdd = memo(
           onClick={onClick}
           name="ReadBook"
           checked={todo.checked}
-          onChange={onchange}
         />
         <label className={styles.text} htmlFor={id}>
           {todo.text}

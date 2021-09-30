@@ -1,8 +1,9 @@
 import React, { memo, useRef } from "react";
+import { TodoInterface } from "../item/item";
 import styles from "./todo_item_add_form.module.css";
 
 type TodoItemAddFromProps = {
-  onAddItem(text: string): void;
+  onAddItem(todo: Array<TodoInterface>): void;
   offAddForm(): void;
 };
 
@@ -12,7 +13,7 @@ const TodoItemAddForm = memo(
 
     const onSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (inputRef.current!.value !== "" && event.code === "Enter") {
-        onAddItem(inputRef.current!.value);
+        onAddItem({inputRef.current!.value, checked:false});
         inputRef.current!.value = "";
       }
     };

@@ -23,8 +23,8 @@ const TodoItem = memo(({ item, index, dispatch }: itemProps) => {
     dispatch(deleteTodo({ item, index }));
   };
 
-  const onCheckedTodo = (index: number, checked: boolean) => {
-    dispatch(checkedTodo({ item, index, checked }));
+  const onCheckedTodo = (chekcked: boolean) => {
+    dispatch(checkedTodo(item, todo, checked));
   };
 
   const onAddButton = () => {
@@ -64,7 +64,6 @@ const TodoItem = memo(({ item, index, dispatch }: itemProps) => {
                     id={`${item.id} ${index.toString()}`}
                     onAddButton={onAddButton}
                     onDeleteButton={onDeleteButton}
-                    onCheckedTodo={onCheckedTodo}
                   />
                 ))}
               {onAddForm && (

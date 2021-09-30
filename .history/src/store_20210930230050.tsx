@@ -2,6 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { dataService } from "./index";
 import { ItemType, TodoInterface } from "./component/item/item";
 import { InitData } from "./component/main/main";
+import { isMetaProperty } from "typescript";
 
 export type dataInitalState = {
   userId: string | undefined;
@@ -106,8 +107,11 @@ const dataSlice = createSlice({
     },
     checkedTodo: (state: dataInitalState, action: checkedTodoAction) => {
       const item = state.data.items[action.payload.item.id];
-      item.todolist[action.payload.index].checked = action.payload.checked;
-      dataService.writeData(state.userId!, state.data);
+      const index = action.payload.index;
+      item.todolist[action.payload.index];
+
+      // item.todolist[todoIndex].checked = action.payload.checked;
+      // dataService.writeData(state.userId!, state.data);
     },
   },
 });
