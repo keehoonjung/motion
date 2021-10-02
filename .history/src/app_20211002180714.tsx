@@ -14,14 +14,14 @@ type AppProps = {
 
 function App({ FileInput, authService, dataService }: AppProps) {
   return (
-    <BrowserRouter basename={"/motion"}>
+    <BrowserRouter>
       <Switch>
-        <Route path={["/", ".home"]} exact>
+        <Route path={["/#", ".home"]} exact>
           <section className={stylse.login_container}>
             <Login authService={authService} />
           </section>
         </Route>
-        <Route path="/main">
+        <Route path="/#/main">
           <section className={stylse.maker_container}>
             <Main
               FileInput={FileInput}

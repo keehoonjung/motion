@@ -14,7 +14,7 @@ type AppProps = {
 
 function App({ FileInput, authService, dataService }: AppProps) {
   return (
-    <BrowserRouter basename={"/motion"}>
+    <BrowserRouter>
       <Switch>
         <Route path={["/", ".home"]} exact>
           <section className={stylse.login_container}>
