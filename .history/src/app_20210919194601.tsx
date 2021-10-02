@@ -21,7 +21,7 @@ function App({ FileInput, authService, dataService }: AppProps) {
             <Login authService={authService} />
           </section>
         </Route>
-        <Route path="/#/main">
+        <Route path="/main">
           <section className={stylse.maker_container}>
             <Main
               FileInput={FileInput}
